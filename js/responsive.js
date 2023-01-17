@@ -91,7 +91,7 @@ function respondToWindowWidth () {
   var banner_ims = $ ('#banner-im-grid');
   banner_ims.html ('');
   // console.log ('remove');
-  if (rst[0] === 0) {
+  if (!rst) {
     return;
   }
   ncol = rst[0];

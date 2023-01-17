@@ -32,16 +32,20 @@ function scrollTo(to, duration) {
 }
 
 function slideTo(elID, navbar_h = 56) {
-  var dest = document.getElementById(elID);
-  var height =
-    window.innerHeight ||
-    document.documentElement.clientHeight ||
-    document.body.clientHeight;
-  var page_height = document.body.scrollHeight;
-  var dest_pos = Math.min(dest.offsetTop - navbar_h, page_height - height);
-  // console.log('dest', dest_pos);
-
-  scrollTo(dest_pos, 500);
+  try{
+    var dest = document.getElementById(elID);
+    var height =
+      window.innerHeight ||
+      document.documentElement.clientHeight ||
+      document.body.clientHeight;
+    var page_height = document.body.scrollHeight;
+    var dest_pos = Math.min(dest.offsetTop - navbar_h, page_height - height);
+    // console.log('dest', dest_pos);
+  
+    scrollTo(dest_pos, 500);
+  }catch{
+    console.log("该模块尚未开发！")
+  }
 }
 
 // function respondToWindowWidth() {
