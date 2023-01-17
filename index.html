@@ -1,0 +1,1791 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Meta tags for search engines to crawl -->
+	<meta name="robots" content="index,follow">
+	<meta name="description" content="EmptyShot -- A holistic dataset for movie understanding.">
+	<meta name="keywords" content="emptyshot, dataset, mmlab, movie, deep learning, video analysis, computer vision">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+		integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+
+	<!-- Title and Icon -->
+	<title>EmptyShot</title>
+	<link rel="shortcut icon" href="./emptyshot.ico" />
+
+	<!-- include css -->
+	<link rel="stylesheet" href="css/index.css?ver=20200601">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+	<script src="js/annimations.js?ver=20200601"></script>
+	<script src="js/responsive.js?ver=20200601"></script>
+
+</head>
+
+<body>
+
+	<nav class="navbar navbar-expand-md navbar-light  fixed-top shadow" style="background-color: #ffffff;" id="nav-bar">
+		<div class=" col-xl-2  col-md-2 col-2">
+			<a class="navbar-brand pull-right color-cayan" href="#banner" onclick="slideTo('banner'); return false;">
+				<img src="src/imgs/emptyshot_logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+				<b>EmptyShot</b>
+			</a>
+		</div>
+
+		<div class="col-xl-6 col-md-6 col-6">
+			<div class="collapse navbar-collapse " id="nav-links1">
+				<div class="navbar-nav ">
+					<!-- <a class="nav-item nav-link text-primary" href="#banner-container-outer" onclick="slideTo('banner-container-outer');  return false;">Home</a> -->
+					<a class="nav-item nav-link text-grey" href="#about"
+						onclick="slideTo('about');  return false;">About</a>
+					<a class="nav-item nav-link text-grey" href="#expo"
+						onclick="slideTo('expo');  return false;">Explore</a>
+					<a class="nav-item nav-link text-grey" href="#download"
+						onclick="slideTo('download');  return false;">Download</a>
+					<a class="nav-item nav-link text-grey" href="#project"
+						onclick="slideTo('project');  return false;">Project</a>
+					<!-- <a class="nav-item nav-link text-grey" href="#challenge"
+						onclick="slideTo('challenge');  return false;">Challenge</a> -->
+					<a class="nav-item nav-link text-grey" href="#news"
+						onclick="slideTo('news');  return false;">News</a>
+					<a class="nav-item nav-link text-grey" href="#contact"
+						onclick="slideTo('contact');  return false;">Contact</a>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="offset-xl-1 col-xl-2 offset-xl-1   offset-md-1 col-md-3 col-0">
+			<div class="collapse navbar-collapse pull-right" id="nav-links2">
+				<div class="navbar-nav">
+
+					<a class="nav-item nav-link text-grey" href="https://github.com/emptyshot/emptyshot-tools/blob/master/docs/GETTING_STARTED.md" target="_blank">
+						<span>Docs
+							<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px"
+								viewBox="0 0 100 100" class="svg-icon">
+								<path fill="currentColor"
+									d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">
+								</path>
+								<polygon fill="currentColor"
+									points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
+								</polygon>
+							</svg>
+						</span>
+					</a>
+
+					<a class="nav-item nav-link text-grey" href="https://github.com/emptyshot" target="_blank">
+						<span>Gitee
+							<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px"
+								viewBox="0 0 100 100" class="svg-icon">
+								<path fill="currentColor"
+									d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z">
+								</path>
+								<polygon fill="currentColor"
+									points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9">
+								</polygon>
+							</svg>
+							<!-- <img src="src/imgs/link_out.svg" onload="SVGInject(this)" class="svg-icon text-grey" /> -->
+						</span>
+					</a>
+
+				</div>
+			</div>
+		</div>
+	</nav>
+
+	<div class="banner-bg" id="banner">
+		<div class="flying-text" id='banner-text'>
+			<div id='banner-text-main' class="color-cyan-dark xl-font"><b>EmptyShot</b></div>
+			<div id='banner-text-sub' class="color-grey">A holistic dataset for movie understanding</div>
+			<br />
+			<br />
+			<button type="button" class=" btn btn-success btn-rounded" onclick="slideTo('download'); return false;">
+				&nbsp&nbspDownload&nbsp&nbsp</button>
+		</div>
+		<div id="banner-im-grid">
+			<div class="flying-text2" id='banner-text'>
+				<img class="banner-im" src="https://i.pinimg.com/236x/f3/2a/79/f32a794f9829b3cd8e22f8b746202dbd.jpg" />
+			</div>
+			<div class="flying-text3" id='banner-text'>
+				<img class="banner-im" src="https://i.pinimg.com/236x/f3/2a/79/f32a794f9829b3cd8e22f8b746202dbd.jpg" />
+			</div>
+			<div class="flying-text4" id='banner-text'>
+				<img class="banner-im" src="https://i.pinimg.com/236x/f3/2a/79/f32a794f9829b3cd8e22f8b746202dbd.jpg" />
+			</div>
+			<div class="flying-text5" id='banner-text'>
+				<img class="banner-im" src="https://i.pinimg.com/236x/f3/2a/79/f32a794f9829b3cd8e22f8b746202dbd.jpg" />
+			</div>
+		</div>
+	</div>
+
+	<!-- </div> -->
+	<div class="container">
+		<div class="row" id="about">
+			<div class="col-xl-12 col-md-12 col-12">
+				<div class="row abs-mg-bot-xl text-center justify-content-between">
+					<div class="abs-mg-top-hg  col-xl-3 col-lg-3 col-md-3 col-12">
+						<div class="abs-mg-bot"><img src='src/imgs/hdd.png' class="icon"></div>
+						<div class="md-font bold abs-mg-bot-ti">Massive Data</div>
+						<div class="sm-font color-light width-limit-250 ">
+							<div>1.1K Movies, 60K trailers, 375K meta etc., all freely avaliable at
+								EmptyShot.</div>
+						</div>
+					</div>
+					<div class="abs-mg-top-hg  col-xl-3 col-lg-3 col-md-3 col-12">
+						<div class="abs-mg-bot"><img src='src/imgs/anno.png' class="icon"></div>
+						<div class="md-font bold abs-mg-bot-ti">Rich Annotation</div>
+						<div class="sm-font color-light width-limit-250">Various annotations
+							of actors, scene and cinematic styles are provided.
+						</div>
+					</div>
+					<div class="abs-mg-top-hg col-xl-3 col-lg-3 col-md-3 col-12">
+						<div class="abs-mg-bot"><img src='src/imgs/code.png' class="icon"></div>
+						<div class="md-font bold abs-mg-bot-ti">Diverse Tasks</div>
+						<div class="sm-font color-light width-limit-250">Support several vision and language
+							tasks, from low-level to high-level.</div>
+					</div>
+					<div class="abs-mg-top-hg col-xl-3 col-lg-3 col-md-3 col-12">
+						<div class="abs-mg-bot"><img src='src/imgs/toolbox.png' class="icon"></div>
+						<div class="md-font bold abs-mg-bot-ti">Opensource Toolbox</div>
+						<div class="sm-font color-light width-limit-250">Easy-to-use toolbox designed for
+							experiments and data processing.</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="row" id="expo">
+			<div class="col-xl-12 col-md-12 col-12 abs-pd-top-md">
+				<hr />
+				<p class="lg-font bold">
+					Explore EmptyShot
+				</p>
+			</div>
+			<div class="col-xl-12 col-md-12 col-12">
+				<p class="md-font bold">
+					Data in EmptyShot
+				</p>
+			</div>
+			<div class="col-xl-12 col-md-12 col-12">
+				<div class="row flex-nowrap abs-mg-bot-lg text-center justify-content-start overflowx">
+					<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
+						<div class="card">
+							<div class="card-header bold"> 🎬&nbsp Movie</div>
+							<!-- <img class="card-img-top" src="src/imgs/movies.png" alt=" Card image cap"> -->
+							<div class="card-body sm-font">
+								<!-- <h5 class="card-title">Movies</h5> -->
+								<div class="card-text-limit overflowy color-light justify-text-between">
+                                    There are 2600 movies in EmptyShots&Films. We select the movie that covers a wide range of years, countries and genres.</div>
+								<a href="#" class="d-none d-sm-block btn btn-primary btn-sm" data-toggle="modal"
+									data-target="#modal-data-movie">Examples & Statistics</a>
+								<a href="#" class="d-block d-sm-none btn btn-primary btn-sm disabled"
+									data-toggle="modal" data-target="#modal-data-movie">View Example on Desktop</a>
+							</div>
+						</div>
+					</div>
+					<div class=" col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
+						<div class="card">
+							<div class="card-header bold">🎞️&nbsp Trailer</div>
+							<!-- <img class="card-img-top" src="src/imgs/movies.png" alt=" Card image cap"> -->
+							<div class="card-body  sm-font">
+								<!-- <h5 class="card-title">Card title</h5> -->
+								<div class="card-text-limit overflowy color-light justify-text-between">
+                                    There are 60K trailers and empty shots from 33K unique movies in EmptyShots&Films. The url links of the trailers are provided.
+								</div>
+								<a href="#" class="d-none d-sm-block btn btn-primary btn-sm" data-toggle="modal"
+									data-target="#modal-data-trailer">Examples & Statistics</a>
+								<a href="#" class="d-block d-sm-none btn btn-primary btn-sm disabled"
+									data-toggle="modal" data-target="#modal-data-movie">View Example on Desktop</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
+						<div class="card">
+							<div class="card-header bold">📸 &nbsp Color</div>
+							<div class="card-body sm-font">
+								<!-- <h5 class="card-title">Card title</h5> -->
+								<div class="card-text-limit overflowy color-light justify-text-between">
+                                    There are 3.9M photos from different movies in EmptyShots&Films. 
+                                    We analyse the main color in these photos as well as the processed results to explore the color used in empty shots and the relationship with the film narrative.
+								</div>
+								<a href="#" class="d-none d-sm-block btn btn-primary btn-sm" data-toggle="modal"
+									data-target="#modal-data-photo">Examples & Statistics</a>
+								<a href="#" class="d-block d-sm-none btn btn-primary btn-sm disabled"
+									data-toggle="modal" data-target="#modal-data-movie">View Example on Desktop</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
+						<div class="card">
+							<div class="card-header bold">📒&nbsp Text</div>
+							<!-- <img class="card-img-top" src="src/imgs/movies.png" alt=" Card image cap"> -->
+							<div class="card-body sm-font">
+								<!-- <h5 class="card-title">Card title</h5> -->
+								<div class="card-text-limit overflowy color-light justify-text-between">
+                                    There are 3 main types of texts in EmptyShots&Films, namely Subtitle, Synopsis and Script. 
+                                    We focus on their relationship with the empty shot.
+									<i>Subtitle</i>,
+									<i>Synopsis</i>
+									and
+									<i>Script</i>.
+								</div>
+								<a href="#" class="d-none d-sm-block btn btn-primary btn-sm" data-toggle="modal"
+									data-target="#modal-data-text">Examples & Statistics</a>
+								<a href="#" class="d-block d-sm-none btn btn-primary btn-sm disabled"
+									data-toggle="modal" data-target="#modal-data-movie">View Example on Desktop</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
+						<div class="card">
+							<div class="card-header bold">📝&nbsp Meta Data</div>
+							<!-- <img class="card-img-top" src="src/imgs/movies.png" alt=" Card image cap"> -->
+							<div class="card-body sm-font">
+								<!-- <h5 class="card-title">Card title</h5> -->
+								<div class="card-text-limit overflowy color-light justify-text-between">
+									EmptyShots&Films contains meta data of 375K movies. Each meta data is written
+									in a json file.
+								</div>
+								<a href="#" class="d-none d-sm-block btn btn-primary btn-sm" data-toggle="modal"
+									data-target="#modal-data-meta">Examples & Statistics</a>
+								<a href="#" class="d-block d-sm-none btn btn-primary btn-sm disabled"
+									data-toggle="modal" data-target="#modal-data-movie">View Example on Desktop</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modals -->
+    <!-- Modal Data Movie-->
+    <div class="modal fade " id="modal-data-movie" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-width-md" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="md-font bold" id="exampleModalLabel">Example of movies in EmptyShot</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body ">
+                        <div class="bold">
+                            Example Video
+                        </div>
+                        <div class="color-light">
+                            Example clip "flying" from movie <i>Titanic</i>.
+                        </div>
+                        <div align="center">
+                            <!-- <video src="https://youtu.be/KqZNW-rh0ZM"></video> -->
+                            <video class="xl-media" controls>
+                                <source src="http://movie.mmlab.site/src/emptyshot/data_movie_titanic_clip_flying.mp4"
+                                    type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <br />
+                        <div class="bold">
+                            Statistics
+                        </div>
+                        <div class="color-light">
+                            We show the distribution of release year, countries and genres for the 1, 100 movies in
+                            EmptyShot (y-axis of country and genre in log scale).
+                        </div>
+                        <div align="center">
+                            <img class="lg-media" src="src/imgs/examples/data_movie_dist.png" />
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                    </div>
+                </div>
+            </div>
+    </div>
+    <!-- Modal Data Trailer-->
+    <div class="modal fade " id="modal-data-trailer" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-width-md" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="md-font bold" id="exampleModalLabel">Example of trailers in EmptyShot</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body ">
+                        <div class="bold">
+                            Example Video
+                        </div>
+                        <div class="color-light">
+                            Here we show three different trailers from movie <i>Titanic</i>.
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 col-12">
+                                <!-- <video src="https://youtu.be/KqZNW-rh0ZM"></video> -->
+                                <video class="xl-media" controls>
+                                    <source src="src/imgs/examples/titanic_trailer_04.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                            <div class="col-md-4 col-12">
+                                <!-- <video src="https://youtu.be/KqZNW-rh0ZM"></video> -->
+                                <video class="xl-media" controls>
+                                    <source src="src/imgs/examples/titanic_trailer_02.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                            <div class="col-md-4 col-12">
+                                <!-- <video src="https://youtu.be/KqZNW-rh0ZM"></video> -->
+                                <video class="xl-media" controls>
+                                    <source src="src/imgs/examples/titanic_trailer_03.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="bold">
+                            Statistics
+                        </div>
+                        <div class="color-light">
+                            The distribution of durations are shown below:
+                        </div>
+                        <div align="center">
+                            <img class="lg-media" src="src/imgs/examples/data_trailer_dist.png" />
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                    </div>
+                </div>
+            </div>
+    </div>
+    <!-- Modal Data Photo-->
+    <div class="modal fade " id="modal-data-photo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-width-md" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="md-font bold" id="exampleModalLabel">Examples and statistics of photots in EmptyShot
+                        </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body ">
+                        <div class="bold">
+                            Statistics
+                        </div>
+                        <div class="color-light">
+                            There are 7 types of photos in EmptyShot, namely,
+                            <i>publicity</i>,
+                            <i>still frame</i>,
+                            <i>event</i>,
+                            <i>poster</i>,
+                            <i>behind scene</i>,
+                            <i>product</i>,
+                            <i>production art</i>.
+                            The statistics of these photos are shown below:
+                        </div>
+                        <div align="center">
+                            <img class="sm-media" src="src/imgs/examples/phototype.png" />
+                        </div>
+                        <br />
+                        <div class="bold">
+                            Example Photo
+                        </div>
+                        <div class="color-light">
+                            Here we show samples for different types of photos in EmptyShot.
+                        </div>
+                        <div align="center">
+                            <img class="lg-media" src="src/imgs/examples/sample_photo.png" />
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                    </div>
+                </div>
+            </div>
+    </div>
+    <!-- Modal Data Text-->
+    <div class="modal fade " id="modal-data-text" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-width-md" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="md-font bold" id="exampleModalLabel">Examples of script, scynopsis and subtitle in
+                            EmptyShot</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body ">
+                        <div class="bold">
+                            Example
+                        </div>
+                        <div class="color-light">
+                            Here we show the fast forward clip of "you jump, I jump" and the related
+                            subtilte, synopses and script. The highlighted color is the corresponding
+                            text content of the clip.
+                        </div>
+                        <br />
+
+                        <div align="center">
+                            <video class="lg-media" controls>
+                                <source src="src/imgs/examples/jump_010203.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <br />
+
+                        <nav>
+                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                <a class="nav-item nav-link active" id="nav-subtitle-tab" data-toggle="tab"
+                                    href="#nav-subtitle" role="tab" aria-controls="nav-subtitle"
+                                    aria-selected="true">subtitle</a>
+                                <a class="nav-item nav-link" id="nav-synopsis-tab" data-toggle="tab" href="#nav-synopsis"
+                                    role="tab" aria-controls="nav-synopsis" aria-selected="false">synopsis</a>
+                                <a class="nav-item nav-link" id="nav-script-tab" data-toggle="tab" href="#nav-script"
+                                    role="tab" aria-controls="nav-script" aria-selected="false">script</a>
+                            </div>
+                        </nav>
+                        <div class="tab-content" id="nav-tabContent">
+                            <div class="tab-pane fade show active" id="nav-subtitle" role="tabpanel"
+                                aria-labelledby="nav-subtitle-tab">
+                                <div class="row abs-mg-top text-board-limit">
+                                    <div class="col-md-6 col-12">
+                                        <pre class="pretty"><code class="nohighlight">
+        380
+        00:34:05,282 --> 00:34:06,601
+        I'm Tommy Ryan.
+
+        381
+        00:34:06,682 --> 00:34:08,081
+        - Jack Dawson.
+        - Hello.
+
+        382
+        00:34:08,162 --> 00:34:09,641
+        - Fabrizio.
+        - Hi.
+
+        383
+        00:34:10,562 --> 00:34:13,076
+        Do you make any money
+        with your drawings?
+
+        ...
+
+        <span class="color-highlight">	395
+        00:37:02,877 --> 00:37:04,196
+        Don't do it.
+
+        396
+        00:37:04,677 --> 00:37:05,951
+        Stay back.
+
+        397
+        00:37:06,917 --> 00:37:08,669
+        Don't come any closer.
+
+        398
+        00:37:09,517 --> 00:37:12,030
+        Come on. Just give me your hand,
+        I'll pull you back over.
+
+        399
+        00:37:12,117 --> 00:37:13,947
+        No! Stay where you are.
+
+        400
+        00:37:14,476 --> 00:37:15,796
+        I mean it.
+
+        401
+        00:37:16,356 --> 00:37:17,675
+        I'll let go.
+
+        402
+        00:37:28,476 --> 00:37:29,909
+        No, you won't.
+
+        ...
+
+        411
+        00:37:55,035 --> 00:37:56,866
+        The fall alone will kill you.
+
+        412
+        00:37:56,955 --> 00:37:59,594
+        It would hurt.
+        I'm not saying it wouldn't.
+
+        413
+        00:38:00,195 --> 00:38:02,186
+        To tell you the truth,
+        I'm a lot more concerned ...
+
+        414
+        00:38:02,275 --> 00:38:04,345
+        about that water being so cold.
+
+        ...</span></code></pre>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        <pre class="pretty"><code class="nohighlight">
+    <span class="color-highlight">	452
+        00:40:30,030 --> 00:40:31,429
+        Help, please!
+
+        453
+        00:40:34,270 --> 00:40:37,307
+        - Please, help me!
+        - Listen to me. I've got you.
+
+        454
+        00:40:37,590 --> 00:40:39,069
+        I won't let go.
+
+        455
+        00:40:39,150 --> 00:40:41,266
+        Now pull yourself up. Come on!
+
+        456
+        00:40:43,990 --> 00:40:45,787
+        Come on. That's right.
+
+        457
+        00:40:46,430 --> 00:40:47,863
+        You can do it.
+
+        458
+        00:40:52,190 --> 00:40:53,509
+        I got you.
+    </span>
+        459
+        00:40:58,909 --> 00:41:00,467
+        What's all this?
+
+        460
+        00:41:05,869 --> 00:41:08,463
+        You stand back!
+        And don't move an inch!
+
+        461
+        00:41:10,789 --> 00:41:12,268
+        Fetch the master-at-arms.
+
+        462
+        00:41:14,269 --> 00:41:16,499
+        This is completely unacceptable.
+
+        463
+        00:41:16,789 --> 00:41:20,304
+        What made you think you could
+        put your hands on my fiancée?
+
+        464
+        00:41:20,669 --> 00:41:22,261
+        Look at me, you filth!
+
+        465
+        00:41:22,349 --> 00:41:24,385
+        - Cal.
+        - What do you think you were doing?
+
+        466
+        00:41:24,469 --> 00:41:26,584
+        Cal, stop. It was an accident.
+
+        467
+        00:41:27,708 --> 00:41:29,061
+        An accident?
+
+        468
+        00:41:29,708 --> 00:41:30,858
+        It was.
+
+        469
+        00:41:32,028 --> 00:41:33,427
+        Stupid, really.</code></pre>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                            <div class="tab-pane fade" id="nav-synopsis" role="tabpanel" aria-labelledby="nav-synopsis-tab">
+                                <div
+                                    class="pretty abs-mg-top color-light text-board-limit text-board-pad justify-text-between ">
+                                    In 1996, treasure hunter Brock Lovett (Bill Paxton) and his team aboard the research
+                                    vessel Keldysh search the wreck of RMS Titanic for a necklace with a rare diamond,
+                                    the
+                                    Heart of the Ocean. They recover a safe containing a drawing of a young woman
+                                    wearing
+                                    only the necklace. It is dated April 14, 1912, the day the ship struck the iceberg.
+                                    Rose
+                                    Dawson Calvert (Gloria Stuart), claiming to be the person in the drawing, visits
+                                    Lovett
+                                    and tells of her experiences aboard the ship.
+                                    <br /><br />
+                                    In 1912 Southampton, 17-year-old
+                                    first-class passenger Rose DeWitt Bukater (Kate Winslet), her fiancé Cal Hockley
+                                    (Billy
+                                    Zane), and her mother Ruth (Frances Fisher) board the Titanic. Also boarding the
+                                    ship at
+                                    Southampton are Jack Dawson (Leonardo DiCaprio), a down-on-his-luck sketch artist,
+                                    and
+                                    his Italian friend Fabrizio (Danny Nucci). <span class="color-highlight">Young Rose,
+                                        angry and distraught that her
+                                        mother has apparently arranged the marriage, considers committing suicide by
+                                        jumping
+                                        from the stern; Jack manages to pull her back over the rail after she loses her
+                                        footing
+                                        & nearly falls into the propellers.</span> Discovered with Jack, Rose tells Cal
+                                    that
+                                    she was
+                                    peering over the edge and Jack saved her from falling. Cal is indifferent, but when
+                                    Rose
+                                    indicates some recognition is due, he offers Jack a small amount of money.
+                                    <br /><br />
+                                    After Rose
+                                    asks whether saving her life meant so little, he invites Jack to dine with them in
+                                    first
+                                    class the following night, along with several prominent first-class passengers -
+                                    including the Countess of Rothes, Archibald Gracie (Bernard Fox), Thomas Andrews
+                                    (Victor
+                                    Garber), Molly Brown (Kathy Bates), and John Jacob Astor (Eric Braeden) & his wife.
+                                    Jack
+                                    and Rose develop a tentative friendship, though Cal and Ruth are wary of him.
+                                    <br /><br />
+                                    Following
+                                    dinner, Rose secretly joins Jack at a party in third class. During the party Cal's
+                                    butler, Spicer Lovejoy (David Warner) stealthily sneaks down the third class
+                                    staircase
+                                    to spy on her. After a very tense breakfast the following morning, in which Cal
+                                    shows an
+                                    inclination towards violence, Rose becomes even more apprehensive about her upcoming
+                                    marriage. Ruth emphasizes that Rose's marriage will resolve the DeWitt Bukaters'
+                                    financial problems. After spotting Rose, Cal and Ruth out on the Boat Deck, Jack
+                                    stealthily sneaks back into First Class and tries to warn Rose about what she may be
+                                    facing. Rose rebuffs Jack's advances, but later realizes that she prefers him over
+                                    Cal.
+                                    <br /><br />
+                                    After meeting on the bow at sunset, Rose takes Jack to her state room and displays
+                                    Cal's
+                                    engagement present: the Heart of the Ocean. At her request, Jack sketches Rose
+                                    posing
+                                    nude wearing it. Meanwhile, in the First-Class Smoking Room, Cal's butler informs
+                                    him
+                                    that none of the stewards have seen Rose at all that night. Cal orders the butler to
+                                    find her. Rose & Jack manage to evade Cal's bodyguard and have sex in an automobile
+                                    inside the cargo hold. They later visit the forward well deck, and while on it, the
+                                    lookouts spot an iceberg directly in the ship's path.
+                                    <br /><br />
+                                    Orders are given to turn the ship
+                                    hard a-starboard and run the engines full astern, but the ship takes too long to
+                                    make
+                                    the turn and the starboard side scrapes along the iceberg, causing substantial
+                                    damage to
+                                    the watertight compartments, including the cargo hold where Jack & Rose had been
+                                    having
+                                    sex in the automobile. Jack & Rose witness the collision with the iceberg and
+                                    overhear
+                                    the officers and designer discussing its seriousness.
+                                    <br /><br />
+                                    On the bridge, builder Thomas
+                                    Andrews, Captain Smith (Bernard Hill), the ship's officers and White Star Line
+                                    Managing
+                                    Director Bruce Ismay (Jonathan Hyde) discuss the damage. The water has reached 14
+                                    feet
+                                    above the keel in 10 minutes and has flooded 5 watertight compartments. Mr. Andrews
+                                    warns that because of a design flaw, the water will spill over the tops of the
+                                    bulkheads
+                                    at E Deck, and this will cause the ship to sink. He gives an hour, two at most, for
+                                    the
+                                    ship to remain afloat.
+                                    <br /><br />
+                                    Cal discovers Jack's sketch of Rose and a mocking note from her
+                                    in his safe along with the necklace. When Jack and Rose attempt to tell Cal of the
+                                    collision, he has his butler slip the necklace into Jack's pocket and accuses him of
+                                    theft. He is arrested, taken to the Master-at-arms' office, and handcuffed to a
+                                    pipe.
+                                    <br /><br />
+                                    Cal puts the necklace in his own coat pocket. With the ship sinking, Rose is
+                                    desperate
+                                    to free Jack. She flees Cal and her mother, who has boarded a lifeboat, and rescues
+                                    him.
+                                    They return to the boat deck, where Cal and Jack encourage her to board a lifeboat;
+                                    Cal
+                                    claims he can get himself and Jack off safely. After Rose boards one, Cal tells Jack
+                                    the
+                                    arrangement is only for himself.
+                                    <br /><br />
+                                    As her boat lowers, Rose decides that she cannot leave
+                                    Jack and jumps back on board. Jack confronts her, angrily at first, but his angers
+                                    soon
+                                    turns to affection and they share a series of kisses at the bottom of the Grand
+                                    Staircase. Cal, seeing this, takes his butler's pistol and chases Rose and Jack into
+                                    the
+                                    flooding first class dining saloon. After using up his ammunition, Cal realizes he
+                                    gave
+                                    his coat and consequently the necklace to Rose.
+                                    <br /><br />
+                                    Jack & Rose are forced to flee below
+                                    decks to escape Cal, and narrowly escape drowning themselves. They become trapped
+                                    behind
+                                    a locked gate, but Jack manages to free them just as the rising water reaches their
+                                    heads. Out on the Boat Deck, Cal decides to make his own escape. He reminds the
+                                    First
+                                    Officer of the arrangement made earlier, but the officer angrily turns on Cal and
+                                    refuses to allow him boarding. When he spots a lost child hiding behind a winch, he
+                                    takes the child and is subsequently allowed into a collapsible lifeboat by Chief
+                                    Officer
+                                    Wilde.
+                                    <br /><br />
+                                    As Cal and others board the collapsible, the water surges into the bridge &
+                                    wheelhouse, drowning Captain E.J. Smith and causing Cal's boat to start floating off
+                                    the
+                                    deck. By now the stern is staring to rise out of the water and the remaining
+                                    passengers
+                                    are running farther & farther aft. After braving several obstacles, Jack and Rose
+                                    return
+                                    to the boat deck.
+                                    <br /><br />
+                                    All the lifeboats have departed and passengers are falling to their
+                                    deaths as the stern rises out of the water. Water now crashes through the huge dome
+                                    over
+                                    the Grand Staircase, drowning those passengers trapped inside. Jack & Rose reach the
+                                    very stern - where they had first met - and take up positions on it by climbing over
+                                    the
+                                    rail, next to Chief Baker Charles Joughin.
+                                    <br /><br />
+                                    The ship breaks in half, causing the stern to
+                                    crash down into the water and killing Lovejoy, the butler. As the bow breaks off it
+                                    pulls the stern back into the air, leaving it sitting there for a minute. Jack and
+                                    Rose
+                                    ride it into the ocean as it fills with water and then plunges to the bottom.
+                                    <br /><br />
+                                    As Jack &
+                                    Rose let go of the stern, the Titanic disappears into the darkness below them, and
+                                    they
+                                    both swim to the surface to find themselves in a massive mob of passengers and crew.
+                                    Within minutes, Rose & Jack find a piece of paneling from the Grand Staircase, and
+                                    he
+                                    helps her onto the wooden panel only buoyant enough for one person. Holding the
+                                    edge, he
+                                    assures her that she will die an old woman, warm in her bed. He dies of hypothermia
+                                    but
+                                    she is saved when Fifth Officer Lowe & some crewmen return to try to find survivors.
+                                    <br /><br />
+                                    With Rose hiding from Cal en route, the RMS Carpathia takes the survivors to New
+                                    York.
+                                    There she gives her name as Rose Dawson. She later learns that Cal committed suicide
+                                    after losing everything in the 1929 Wall Street Crash.
+                                    <br /><br />
+                                    Lovett abandons his search after
+                                    hearing Rose's story. Alone on the stern of the Keldysh, Rose takes out the Heart of
+                                    the
+                                    Ocean - in her possession all along - and drops it into the sea over the wreck site.
+                                    While she is seemingly asleep in her bed, photos on her dresser depict a life of
+                                    freedom
+                                    and adventure, partly inspired by Jack. A young Rose returns to the ship - at first,
+                                    a
+                                    gloomy wreck on the bottom - but as Rose reaches the Promenade Deck the ship begins
+                                    to
+                                    glow with light. As she enters the Grand Staircase she is greeted by those who
+                                    perished
+                                    on the ship - including the Titanic's band, First Officer Murdoch, Thomas Andrews,
+                                    Jack's friends Fabrizio & Tommy Ryan, and standing at the clock is Jack himself. He
+                                    extends a hand and they reunite, to the happy cheers of the perished passengers &
+                                    crew.
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="nav-script" role="tabpanel" aria-labelledby="nav-script-tab">
+                                <div class="abs-mg-top text-board-limit">
+                                    <pre class="pretty"><code class="nohighlight">	...
+
+        63 INT. ROSE'S BEDROOM - NIGHT
+
+        She enters the room. Stands in the middle, staring at her reflection in the
+        large vanity mirror. Just stands there, then--
+        
+        With a primal, anguished cry she claws at her throat, ripping off her pearl
+        necklace, which explodes across the room. In a frenzy she tears at herself,
+        her clothes, her hair... then attacks the room. She flings everything off
+        the dresser and it flies clattering against the wall. She hurls a
+        handmirror against the vanity, cracking it.
+        
+                                            CUT TO:
+        
+        <span class="color-highlight">64 EXT. A DECK PROMENADE, AFT - NIGHT
+        
+        Rose runs along the B deck promenade. She is dishevelled, her hair flying.
+        She is crying, her cheeks streaked with tears. But also angry, furious!
+        Shaking with emotions she doesn't understand... hatred, self-hatred,
+        desperation. A strolling couple watch her pass. Shocked at the emotional
+        display in public.
+        
+                                            CUT TO:
+        
+        65 EXT. POOP DECK - NIGHT
+        
+        Jack is kicked back on one of the benches gazing at the stars blazing
+        gloriously overhead. Thinking artist thoughts and smoking a cigarette.
+        
+        Hearing something, he turns as Rose runs up the stairs from the well deck.
+        They are the only two on the stern deck, except for QUARTERMASTER ROWE,
+        twenty feet above them on the docking bridge catwalk. She doesn't see Jack
+        in the shadows, and runs right past him.
+        
+        TRACKING WITH ROSE as she runs across the deserted fantail. Her breath
+        hitches in an occasional sob, which she suppresses. Rose slams against the
+        base of the stern flagpole and clings there, panting. She stares out at the
+        black water.
+        
+        Then starts to climb over the railing. She has to hitch her long dress way
+        up, and climbing is clumsy. Moving methodically she turns her body and gets
+        her heels on the white-painted gunwale, her back to the railing, facing out
+        toward blackness. 60 feet below her, the massive propellers are churning
+        the atlantin into white foam, and a ghostly wake trails off toward the
+        horizon.
+        
+        IN A LOW ANGLE, we see Rose standing like a figurehead in reverse. Below
+        her are the huge letters of the name "TITANIC".
+        
+        She leans out, her arms straightening... looking down hypnotized, into the
+        vortex below her. Her dress and hair are lifted by the wind of the ship's
+        movement. The only sound, above the rush of water below, is the flutter and
+        snap of the big Union Jack right above her.
+        
+                            JACK
+        
+        Don't do it.
+        
+        She whips her head around at the sound of his voice. It takes a second for
+        her eyes to focus.
+        
+                            ROSE
+        
+        Stay back! Don't come any closer!
+        
+        Jack sees the tear tracks on her cheeks in the faint glow from the stern
+        running lights.
+        
+                            JACK
+        
+        Take my hand. I'll pull you back in.
+        
+                            ROSE
+        
+        No! Stay where you are. I mean it. I'll let go.
+        
+                            JACK
+        
+        No you won't.
+        
+                            ROSE
+        
+        What do you mean no I won't? Don't presume to tell me what I will and will
+        not do. You don't know me.
+        
+                            JACK
+        
+        You would have done it already. Now come on, take my hand.
+        
+        Rose is confused now. She can't see him very well through the tears, so she
+        wipes them with one hand, almost losing her balance.
+        
+                            ROSE
+        
+        You're distracting me. Go away.
+        
+                            JACK
+        
+        I can't. I'm involved now. If you let go I have to jump in after you.
+        
+                            ROSE
+        
+        Don't be absurd. You'll be killed.
+        
+        He takes off his jacket.
+        
+                            JACK
+        
+        I'm a good swimmer.
+        
+        He starts unlacing his left shoe.
+        
+                            ROSE
+        
+        The fall alone would kill you.
+        
+                            JACK
+        
+        It would hurt. I'm not saying it wouldn't. To be honest I'm a lot more
+        concerned about the water being so cold.
+        
+        She looks down. The reality factor of what she is doing is sinking in.
+        
+                            ROSE
+        
+        How cold?
+        
+                            JACK
+        
+                    (taking off his left shoe)
+        
+        Freezing. Maybe a couple degrees over.
+        
+        He starts unlacing his right shoe.
+        
+                            JACK
+        
+        Ever been to Wisconsin?
+        
+                            ROSE
+        
+                        (perplexed)
+        
+        No.
+        
+                            JACK
+        
+        Well they have some of the coldest winters around, and I grew up there,
+        near Chippewa Falls. Once when I was a kid me and my father were
+        ice-fishing out on Lake Wissota... ice-fishing's where you chop a hole in
+        the--
+        
+                            ROSE
+        
+        I know what ice fishing is!
+        
+                            JACK
+        
+        Sorry. Just... you look like kind of an indoor girl. Anyway, I went through
+        some thin ice and I'm tellin' ya, water that cold... like that right down
+        there... it hits you like a thousand knives all over your body. You can't
+        breath, you can't think... least not about anything but the pain.
+        
+                    (takes off his other shoe)
+        
+        Which is why I'm not looking forward to jumping in after you. But like I
+        said, I don't see a choice. I guess I'm kinda hoping you'll come back over
+        the rail and get me off the hook here.
+        
+                            ROSE
+        
+        You're crazy.
+        
+                            JACK
+        
+        That's what everybody says. But with all due respect, I'm not the one
+        hanging off the back of a ship.
+        
+        He slides one step closer, like moving up on a spooked horse.
+        
+                            JACK
+        
+        Come on. You don't want to do this. Give me your hand.
+        
+        Rose stares at this madman for a long time. She looks at his eyes and they
+        somehow suddenly seem to fill her universe.
+        
+                            ROSE
+        
+        Alright.
+        
+        She unfastens one hand from the rail and reaches it around toward him. He
+        reaches out to take it, firmly.
+        
+                            JACK
+        
+        I'm Jack Dawson.
+        
+                            ROSE
+        
+                            (voice quavering)
+        
+        Pleased to meet you, Mr. Dawson.
+        
+        Rose starts to turn. Now that she has decided to live, the height is
+        terrifying. She is overcome by vertigo as she shifts her footing, turning
+        to face the ship. As she starts to climb, her dress gets in the way, and
+        one foot slips off the edge of the deck.
+        
+        She plunges, letting out a piercing SHRIEK. Jack, gripping her hand, is
+        jerked toward the rail. Rose barely grabs a lower rail with her free hand.
+        
+        QUARTERMASTER ROWE, up on the docking bridge hears the scream and heads for
+        the ladder.
+        
+                            ROSE
+        
+        HELP! HELP!!
+        
+                            JACK
+        
+        I've got you. I won't let go.
+        
+        Jack holds her hand with all his strength, bracing himself on the railing
+        with his other hand. Rose tries to get some kind of foothold on the smooth
+        hull. Jack tries to lift her bodily over the railing. She can't get any
+        footing in her dress and evening shoes, and she slips back. Rose SCREAMS
+        again.
+        
+        Jack, awkwardly clutching Rose by whatever he can get a grip on as she
+        flails, gets her over the railing. They fall together onto the deck in a
+        tangled heap, spinning in such a way that Jack winds up slightly on top of
+        her.
+        
+        Rowe slides down the ladder from the docking bridge like it's a fire drill
+        and sprints across the fantail.</span>
+        
+                            ROWE
+        
+        Here, what's all this?!
+        
+        Rowe runs up and pulls Jack off of Rose, revealing her dishevelled and
+        sobbing on the deck. Her dress is torn, and the hem is pushing up above her
+        knees, showing one ripped stocking. He looks at Jack, the shaggy steerage
+        man with his jacket off, and the first class lady clearly in distress, and
+        starts drawing conclusions. Two seamen chug across the deck to join them.
+        
+                            ROWE
+        
+                            (to Jack)
+        
+        Here you, stand back! Don't move an inch!
+        
+                            (to the seamen)
+        
+        Fetch the Master at Arms.
+        
+                                            CUT TO:
+        
+        66 EXT. POOP DECK - NIGHT
+        
+        A few minutes later. Jack is being detained by the burly MASTER AT ARMS,
+        the closest thing to a cop on board. He is handcuffing Jack. Cal is right
+        in front of Jack, and furious. He has obviously just rushed out here with
+        Lovejoy and another man, and none of them have coats over their black tie
+        evening dress. The other man is COLONEL ARCHIBALD GRACIE, a mustachioed
+        blowhard who still has his brandy snifter. He offers it to Rose, who is
+        hunched over crying on a bench nearby, but she waves it away. Cal is more
+        concerned with Jack. He grabs him by the lapels.
+        
+                            CAL
+        
+        What made you think you could put your hands on my fiancee?! Look at me,
+        you filth! What did you think you were doing?!
+        
+                            ROSE
+        
+        Cal, stop! It was an accident.
+        
+                            CAL
+        
+        An accident?!
+        
+                            ROSE
+        
+        It was... stupid really. I was leaning over and I slipped.
+        
+        Rose looks at Jack, getting eye contact.
+        
+                            ROSE
+        
+        I was leaning way over, to see the... ah... propellers. And I slipped and I
+        would have gone overboard... and Mr. Dawson here saved me and he almost
+        went over himself.
+        
+                            CAL
+        
+        You wanted to see the propellers?
+                                        
+
+        ...</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                    </div>
+                </div>
+            </div>
+    </div>
+    <!-- Modal Data Meta-->
+    <div class="modal fade " id="modal-data-meta" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-width-md" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="md-font bold" id="exampleModalLabel">Examples of meta data in EmptyShot</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body ">
+                        <div class="bold">
+                            Example Meta Data
+                        </div>
+                        <div class="color-light">
+                            Here we show meta data of movie <i>Titanic</i>.
+                        </div>
+                        <div class="abs-mg-top text-board-limit">
+                            <pre class="pretty"><code class="language-json" data-lang="json">{
+        "imdb_id": "tt0120338",
+        "tmdb_id": "597",
+        "douban_id": "1292722",
+        "title": "Titanic (1997)",
+        "genres": [
+            "Drama",
+            "Romance"
+        ],
+        "country": "USA",
+        "version": [
+            {
+            "runtime": "194 min",
+            "description": ""
+            }
+        ],
+        "imdb_rating": 7.7,
+        "director": [
+            {
+            "id": "nm0000116",
+            "name": "James Cameron"
+            }
+        ],
+        "writer": [
+            {
+            "id": "nm0000116",
+            "name": "James Cameron",
+            "description": "written by"
+            }
+        ],
+        "cast": [
+            {
+            "id": "nm0000138",
+            "name": "Leonardo DiCaprio",
+            "character": "Jack Dawson"
+            },
+            {
+            "id": "nm0000701",
+            "name": "Kate Winslet",
+            "character": "Rose Dewitt Bukater"
+            },
+            {
+            "id": "nm0000708",
+            "name": "Billy Zane",
+            "character": "Cal Hockley"
+            },
+            {
+            "id": "nm0000870",
+            "name": "Kathy Bates",
+            "character": "Molly Brown"
+            },
+            {
+            "id": "nm0004920",
+            "name": "Frances Fisher",
+            "character": "Ruth Dewitt Bukater"
+            },
+            {
+            "id": "nm0001784",
+            "name": "Gloria Stuart",
+            "character": "Old Rose"
+            },
+            {
+            "id": "nm0000200",
+            "name": "Bill Paxton",
+            "character": "Brock Lovett"
+            },
+            {
+            "id": "nm0384060",
+            "name": "Bernard Hill",
+            "character": "Captain Smith"
+            },
+            {
+            "id": "nm0001831",
+            "name": "David Warner",
+            "character": "Spicer Lovejoy"
+            },
+            {
+            "id": "nm0001255",
+            "name": "Victor Garber",
+            "character": "Thomas Andrews"
+            },
+            {
+            "id": "nm0404993",
+            "name": "Jonathan Hyde",
+            "character": "Bruce Ismay"
+            },
+            {
+            "id": "nm0000751",
+            "name": "Suzy Amis",
+            "character": "Lizzy Calvert"
+            },
+            {
+            "id": "nm0008656",
+            "name": "Lewis Abernathy",
+            "character": "Lewis Bodine"
+            },
+            {
+            "id": "nm0143167",
+            "name": "Nicholas Cascone",
+            "character": "Bobby Buell"
+            },
+            {
+            "id": "nm0755972",
+            "name": "Anatoly M. Sagalevitch",
+            "character": "Anatoly Milkailavich"
+            },
+            {
+            "id": "nm0001572",
+            "name": "Danny Nucci",
+            "character": "Fabrizio"
+            },
+            {
+            "id": "nm0058029",
+            "name": "Jason Barry",
+            "character": "Tommy Ryan"
+            },
+            {
+            "id": "nm0829380",
+            "name": "Ewan Stewart",
+            "character": "1st Officer Murdoch"
+            },
+            {
+            "id": "nm0344435",
+            "name": "Ioan Gruffudd",
+            "character": "Fifth Officer Lowe"
+            },
+            {
+            "id": "nm0680526",
+            "name": "Jonny Phillips",
+            "character": "2nd Officer Lightoller"
+            },
+            {
+            "id": "nm0152464",
+            "name": "Mark Lindsay Chapman",
+            "character": "Chief Officer Wilde"
+            },
+            {
+            "id": "nm0334262",
+            "name": "Richard Graham",
+            "character": "Quartermaster Rowe"
+            },
+            {
+            "id": "nm0109229",
+            "name": "Paul Brightwell",
+            "character": "Quartermaster Hichens"
+            },
+            {
+            "id": "nm0231871",
+            "name": "Ron Donachie",
+            "character": "Master at Arms"
+            },
+            {
+            "id": "nm0000967",
+            "name": "Eric Braeden",
+            "character": "John Jacob Astor"
+            },
+            {
+            "id": "nm0154195",
+            "name": "Charlotte Chatton",
+            "character": "Madeleine Astor"
+            },
+            {
+            "id": "nm0288882",
+            "name": "Bernard Fox",
+            "character": "Col. Archibald Gracie"
+            },
+            {
+            "id": "nm0258117",
+            "name": "Michael Ensign",
+            "character": "Benjamin Guggenheim"
+            },
+            {
+            "id": "nm0107938",
+            "name": "Fannie Brett",
+            "character": "Madame Aubert"
+            },
+            {
+            "id": "nm0001280",
+            "name": "Jenette Goldstein",
+            "character": "Irish Mommy"
+            },
+            {
+            "id": "nm0653829",
+            "name": "Camilla Overbye Roos",
+            "character": "Helga Dahl"
+            },
+            {
+            "id": "nm0449599",
+            "name": "Linda Kerns",
+            "character": "3rd Class Woman"
+            },
+            {
+            "id": "nm0301401",
+            "name": "Amy Gaipa",
+            "character": "Trudy Bolt"
+            },
+            {
+            "id": "nm0419089",
+            "name": "Martin Jarvis",
+            "character": "Sir Duff Gordon"
+            },
+            {
+            "id": "nm0044011",
+            "name": "Rosalind Ayres",
+            "character": "Lady Duff Gordon"
+            },
+            {
+            "id": "nm0741645",
+            "name": "Rochelle Rose",
+            "character": "Countess of Rothes"
+            },
+            {
+            "id": "nm0263323",
+            "name": "Jonathan Evans-Jones",
+            "character": "Wallace Hartley"
+            },
+            {
+            "id": "nm0909574",
+            "name": "Brian Walsh",
+            "character": "Irish Man"
+            },
+            {
+            "id": "nm0853092",
+            "name": "Rocky Taylor",
+            "character": "Bert Cartmell"
+            },
+            {
+            "id": "nm0654302",
+            "name": "Alexandrea Owens",
+            "character": "Cora Cartmell"
+            },
+            {
+            "id": "nm0186426",
+            "name": "Simon Crane",
+            "character": "4th Officer Boxhall"
+            },
+            {
+            "id": "nm0281992",
+            "name": "Edward Fletcher",
+            "character": "6th Officer Moody"
+            },
+            {
+            "id": "nm0027424",
+            "name": "Scott Anderson",
+            "character": "Frederick Fleet"
+            },
+            {
+            "id": "nm0247542",
+            "name": "Martin East",
+            "character": "Lookout Lee"
+            },
+            {
+            "id": "nm0446287",
+            "name": "Craig Kelly",
+            "character": "Harold Bride"
+            },
+            {
+            "id": "nm0177427",
+            "name": "Gregory Cooke",
+            "character": "Jack Phillips"
+            },
+            {
+            "id": "nm0876720",
+            "name": "Liam Tuohy",
+            "character": "Chief Baker Joughin"
+            },
+            {
+            "id": "nm0484140",
+            "name": "James Lancaster",
+            "character": "Father Byles"
+            },
+            {
+            "id": "nm0712341",
+            "name": "Elsa Raven",
+            "character": "Ida Straus"
+            },
+            {
+            "id": "nm0658817",
+            "name": "Lew Palter",
+            "character": "Isidor Straus"
+            },
+            {
+            "id": "nm0859809",
+            "name": "Reece P. Thompson III",
+            "character": "Irish Little Boy"
+            },
+            {
+            "id": "nm0484837",
+            "name": "Laramie Landis",
+            "character": "Irish Little Grl"
+            },
+            {
+            "id": "nm0905290",
+            "name": "Amber Waddell",
+            "character": "Cal's Crying Girl"
+            },
+            {
+            "id": "nm0905289",
+            "name": "Alison Waddell",
+            "character": "Cal's Crying Girl"
+            },
+            {
+            "id": "nm0874171",
+            "name": "Mark Rafael Truitt",
+            "character": "Yaley"
+            },
+            {
+            "id": "nm0906975",
+            "name": "John Walcutt",
+            "character": "1st Class Husband"
+            },
+            {
+            "id": "nm0286157",
+            "name": "Terry Forrestal",
+            "character": "Chief Engineer Bell"
+            },
+            {
+            "id": "nm0494749",
+            "name": "Derek Lea",
+            "character": "Leading Stoker Barrett"
+            },
+            {
+            "id": "nm0039263",
+            "name": "Richard Ashton",
+            "character": "Carpenter John Hutchinson"
+            },
+            {
+            "id": "nm0626119",
+            "name": "Sean Nepita",
+            "character": "Elevator Operator       (as Sean M. Nepita)"
+            },
+            {
+            "id": "nm0175267",
+            "name": "Brendan Connolly",
+            "character": "Scotland Road Steward"
+            },
+            {
+            "id": "nm0188836",
+            "name": "David Cronnelly",
+            "character": "Crewman"
+            },
+            {
+            "id": "nm0934350",
+            "name": "Garth Wilton",
+            "character": "1st Class Waiter"
+            },
+            {
+            "id": "nm0481918",
+            "name": "Martin Laing",
+            "character": "Promenade Deck Steward"
+            },
+            {
+            "id": "nm0289211",
+            "name": "Richard Fox",
+            "character": "Steward #1"
+            },
+            {
+            "id": "nm0575164",
+            "name": "Nick Meaney",
+            "character": "Steward #2"
+            },
+            {
+            "id": "nm0654503",
+            "name": "Kevin Owers",
+            "character": "Steward #3"
+            },
+            {
+            "id": "nm0135633",
+            "name": "Mark Capri",
+            "character": "Steward #4"
+            },
+            {
+            "id": "nm0006976",
+            "name": "Marc Cass",
+            "character": "Hold Steward #1"
+            },
+            {
+            "id": "nm0378609",
+            "name": "Paul Herbert",
+            "character": "Hold Steward #2"
+            },
+            {
+            "id": "nm0416474",
+            "name": "Emmett James",
+            "character": "1st Class Steward"
+            },
+            {
+            "id": "nm0126137",
+            "name": "Chris Byrne",
+            "character": "Stairwell Steward       (as Christopher Byrne)"
+            },
+            {
+            "id": "nm0656297",
+            "name": "Oliver Page",
+            "character": "Steward Barnes"
+            },
+            {
+            "id": "nm0308127",
+            "name": "James Garrett",
+            "character": "Titanic Porter"
+            },
+            {
+            "id": "nm0390683",
+            "name": "Erik Holland",
+            "character": "Olaf Dahl"
+            },
+            {
+            "id": "nm0455801",
+            "name": "Jari Kinnunen",
+            "character": "Bjorn Gunderson"
+            },
+            {
+            "id": "nm0266119",
+            "name": "Anders Falk",
+            "character": "Olaus Gunderson"
+            },
+            {
+            "id": "nm0399103",
+            "name": "Martin Hub",
+            "character": "Slovakian Father"
+            },
+            {
+            "id": "nm0012079",
+            "name": "Seth Adkins",
+            "character": "Slovakian 3 Year Old Boy"
+            },
+            {
+            "id": "nm0219336",
+            "name": "Barry Dennen",
+            "character": "Praying Man"
+            },
+            {
+            "id": "nm0881951",
+            "name": "Vern Urich",
+            "character": "Man in Water"
+            },
+            {
+            "id": "nm0459779",
+            "name": "Rebecca Klingler",
+            "character": "Mother at Stern       (as Rebecca Jane Klingler)"
+            },
+            {
+            "id": "nm0642078",
+            "name": "Tricia O'Neil",
+            "character": "Woman"
+            },
+            {
+            "id": "nm0242649",
+            "name": "Kathleen S. Dunn",
+            "character": "Woman in Water       (as Kathleen Dunn)"
+            },
+            {
+            "id": "nm0290302",
+            "name": "Romeo Francis",
+            "character": "Syrian Man"
+            },
+            {
+            "id": "nm0547808",
+            "name": "Mandana Marino",
+            "character": "Syrian Woman"
+            },
+            {
+            "id": "nm0512746",
+            "name": "Van Ling",
+            "character": "Chinese Man"
+            },
+            {
+            "id": "nm0647600",
+            "name": "Bj\u00f8rn Olsen",
+            "character": "Olaf       (as Bj\u00f8rn)"
+            },
+            {
+            "id": "nm0678562",
+            "name": "Dan Pettersson",
+            "character": "Sven"
+            },
+            {
+            "id": "nm0240474",
+            "name": "Shay Duffin",
+            "character": "Pubkeeper"
+            },
+            {
+            "id": "nm0254862",
+            "name": "Greg Ellis",
+            "character": "Carpathia Steward"
+            },
+            {
+            "id": "nm0604611",
+            "name": "Diana Morgan",
+            "character": "News Reporter"
+            },
+            {
+            "id": "nm9200859",
+            "name": "Salonisti",
+            "character": "Titanic Orchestra       (as I Salonisti)"
+            },
+            {
+            "id": "nm9200860",
+            "name": "Gaelic Storm",
+            "character": "Steerage Band"
+            },
+            {
+            "id": "nm0027735",
+            "name": "Kris Andersson",
+            "character": "Dancer"
+            },
+            {
+            "id": "nm0060858",
+            "name": "Bobbie Bates",
+            "character": "Dancer"
+            },
+            {
+            "id": "nm0143568",
+            "name": "Aaron James Cash",
+            "character": "Dancer"
+            },
+            {
+            "id": "nm0281945",
+            "name": "Anne Fletcher",
+            "character": "Dancer"
+            },
+            {
+            "id": "nm0287038",
+            "name": "Edmond Alan Forsyth",
+            "character": "Dancer       (as Ed Forsyth)"
+            },
+            {
+            "id": "nm0382794",
+            "name": "Andie Hicks",
+            "character": "Dancer"
+            },
+            {
+            "id": "nm0386816",
+            "name": "Scott Hislop",
+            "character": "Dancer"
+            },
+            {
+            "id": "nm0563306",
+            "name": "Stan Mazin",
+            "character": "Dancer"
+            },
+            {
+            "id": "nm0711938",
+            "name": "Lisa Ratzin",
+            "character": "Dancer"
+            },
+            {
+            "id": "nm0719444",
+            "name": "Julene Renee",
+            "character": "Dancer"
+            },
+            {
+            "id": "nm0368229",
+            "name": "Lorenz Hasler",
+            "character": "I Salonisti Violin"
+            },
+            {
+            "id": "nm0299809",
+            "name": "Thomas F\u00fcri",
+            "character": "I Salonisti Violin"
+            },
+            {
+            "id": "nm0843876",
+            "name": "Ferenc Szedl\u00e1k",
+            "character": "I Salonisti Cello"
+            },
+            {
+            "id": "nm0843875",
+            "name": "B\u00e9la Szedl\u00e1k",
+            "character": "I Salonisti Double Bass"
+            },
+            {
+            "id": "nm0317594",
+            "name": "Werner Giger",
+            "character": "I Salonisti Piano"
+            },
+            {
+            "id": "nm0125320",
+            "name": "Mike Butters",
+            "character": "Musician"
+            },
+            {
+            "id": "nm0000116",
+            "name": "James Cameron",
+            "character": "Steerage Dancer"
+            }
+        ],
+        "overview": "84 years later, a 101-year-old woman named Rose DeWitt Bukater 
+    tells the story to her granddaughter Lizzy Calvert, Brock Lovett, ... And she 
+    explains the whole story from departure until the death of Titanic on its first 
+    and last voyage April 15th, 1912 at 2:20 in the morning.",
+        "storyline": "84 years later, a 100 year-old woman named Rose DeWitt Bukater
+    tells the story to her granddaughter Lizzy Calvert, Brock Lovett, ... And she 
+    explains the whole story from departure until the death of Titanic on its first 
+    and last voyage April 15th, 1912 at 2:20 in the morning.",
+        "plot": "In 1996, treasure hunter Brock Lovett and his team aboard the 
+    research vessel Akademik Mstislav Keldysh search the wreck of RMS Titanic for a 
+    necklace with a rare diamond, the Heart of the Ocean. ... A young Rose reunites 
+    with Jack at the Titanic's Grand Staircase, applauded by those who died.",
+        "synopsis": "In 1996, treasure hunter Brock Lovett (Bill Paxton) and his 
+    team aboard the research vessel Keldysh search the wreck of RMS Titanic for a 
+    necklace with a rare diamond, the Heart of the Ocean. ...e extends a hand and 
+    they reunite, to the happy cheers of the perished passengers & crew."
+        }</code></pre>
+                        </div>
+                        <!-- <div class="bold abs-mg-top">
+                            Statistics
+                        </div>
+                        <div class="color-light">
+                            Here we show meta data of movie <i>Titanic</i>.
+                        </div> -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                    </div>
+                </div>
+            </div>
+    </div>
+
+	<script>
+		respondToWindowWidth();
+		$(window).resize(function () {
+			respondToWindowWidth();
+		});
+		event_bind();
+		popover_bind();
+	</script>
+</body>
+
+</html>
