@@ -1,7 +1,7 @@
 # emptyshot
 
 #### Description
-本人大创及大挑比赛项目《红色影像“源代码”:视觉识别框架下主旋律电影如何讲好中国故事——基于豆瓣与IMDB电影数据库的实证研究》介绍及研究成果展示网页。
+本人大创比赛项目空境信息库介绍及研究成果展示网页。
 
 #### Software Architecture
 Software architecture description
