@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="./emptyshot.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>空境信息库--一个用于电影理解的整体数据集</title>
+    <style>
+        .content-box{
+            width:100%;
+            height: 100%;
+            position: relative;
+        }
+        h1{
+            font-size: .6rem;
+            margin-top: 1rem;;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="content-box">
+        <h1>这个页面展示项目研究的一些符号意象</h1>
+    </div>
+    <!-- 屏幕适配 -->
+    <script type="text/javascript"> 
+        let docEl = document.documentElement, 
+        //当设备的⽅向变化（设备横向持或纵向持）此事件被触发。绑定此事件时， 
+        //注意现在当浏览器不⽀持orientationChange事件的时候我们绑定了resize 事件。
+        //总来的来就是监听当然窗⼝的变化，⼀旦有变化就需要重新设置根字体的值
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        recalc = function() {
+            //设置根字体⼤⼩ 
+            docEl.style.fontSize = 25 * (docEl.clientWidth / 640) + 'px';
+        }; 
+        //绑定浏览器缩放与加载时间 
+        window.addEventListener(resizeEvt, recalc, false); 
+        document.addEventListener('DOMContentLoaded', recalc, false);
+    </script>
+</body>
+</html>
