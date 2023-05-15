@@ -8,20 +8,19 @@
 
 	<!-- Meta tags for search engines to crawl -->
 	<meta name="robots" content="index,follow">
-	<meta name="description" content="空境信息库--一个用于电影理解的整体数据集">
+	<meta name="description" content="影像源代码--基于海量高分电影的动态交互展示平台">
 	<meta name="keywords" content="emptyshot, dataset, mmlab, movie, deep learning, video analysis, computer vision">
 
 	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
-		integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
 	<!-- Title and Icon -->
-	<title>空境信息库--一个用于电影理解的整体数据集</title>
+	<title>影像源代码--基于海量高分电影的动态交互展示平台</title>
 	<link rel="shortcut icon" href="./emptyshot.ico" />
 
 	<!-- include css -->
@@ -76,7 +75,7 @@
 		<div class=" col-xl-2  col-md-2 col-2">
 			<a class="navbar-brand pull-right color-cayan" href="#banner" onclick="slideTo('banner'); return false;">
 				<img src="src/imgs/emptyshot_logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
-				<b>空境信息库</b>
+				<b>影像源代码</b>
 			</a>
 		</div>
 
@@ -117,8 +116,8 @@
     <!-- 电影海报部分 -->
 	<div class="banner-bg" id="banner">
 		<div class="flying-text" id='banner-text'>
-			<div id='banner-text-main' class="color-cyan-dark xl-font"><b>空境信息库</b></div>
-			<div id='banner-text-sub' class="color-grey">一个用于电影理解的整体数据集。</div>
+			<div id='banner-text-main' class="color-cyan-dark xl-font"><b>影像源代码</b></div>
+			<div id='banner-text-sub' class="color-grey">基于海量高分电影的动态交互展示平台。</div>
 			<br />
 			<br />
 			<!-- <button type="button" class=" btn btn-success btn-rounded" onclick="slideTo('download'); return false;">
@@ -145,17 +144,17 @@
 		<div class="row" id="about">
 			<div class="col-xl-12 col-md-12 col-12">
 				<div class="row abs-mg-bot-xl text-center justify-content-between">
+					<div class="contrastBtn abs-mg-top-hg  col-xl-3 col-lg-3 col-md-3 col-12" style="cursor: pointer;">
+						<div class="abs-mg-bot"><img src='src/imgs/empty_shot.png' class="icon"></div>
+						<div class="md-font bold abs-mg-bot-ti">空镜艺术</div>
+					</div>
 					<div class="contrastBtn abs-mg-top-hg col-xl-3 col-lg-3 col-md-3 col-12" style="cursor: pointer;">
 						<div class="abs-mg-bot"><img src='src/imgs/color_motion.png' class="icon"></div>
-						<div class="md-font bold abs-mg-bot-ti">镜头美学</div>
+						<div class="md-font bold abs-mg-bot-ti">运镜色彩</div>
 					</div>
 					<div class="contrastBtn abs-mg-top-hg  col-xl-3 col-lg-3 col-md-3 col-12" style="cursor: pointer;">
 						<div class="abs-mg-bot"><img src='src/imgs/red_image.png' class="icon"></div>
 						<div class="md-font bold abs-mg-bot-ti">符号意象</div>
-					</div>
-					<div class="contrastBtn abs-mg-top-hg  col-xl-3 col-lg-3 col-md-3 col-12" style="cursor: pointer;">
-						<div class="abs-mg-bot"><img src='src/imgs/empty_shot.png' class="icon"></div>
-						<div class="md-font bold abs-mg-bot-ti">空镜艺术</div>
 					</div>
 				</div>
 			</div>
@@ -184,7 +183,7 @@
 					</div>
 					<div class=" col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
 						<div class="card">
-							<div class="card-header bold">🎞️&nbsp 镜头变化快慢</div>
+							<div class="card-header bold">📸 &nbsp 镜头变化快慢</div>
 							<div class="card-body  sm-font">
 								<div class="card-text-limit overflowy color-light justify-text-between">
                                     快慢镜头的速度是指特定的镜头在特定的时间内所能传送的光量。传送光量多的镜头被称为快镜头，传送光量相当少的镜头则被称为慢镜头。
@@ -196,7 +195,7 @@
 					</div>
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
 						<div class="card">
-							<div class="card-header bold"> 🎬&nbsp 电影色彩</div>
+							<div class="card-header bold"> 📒&nbsp 电影色彩</div>
 							<div class="card-body sm-font">
 								<div class="card-text-limit overflowy color-light justify-text-between">
 									电影色彩是指电影中使用的颜色，包括角色服装、布景、灯光等方面的色调搭配。
@@ -209,7 +208,7 @@
 					</div>
 					<div class=" col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
 						<div class="card">
-							<div class="card-header bold">🎞️&nbsp 人物情绪变化</div>
+							<div class="card-header bold">📝&nbsp 人物情绪变化</div>
 							<div class="card-body  sm-font">
 								<div class="card-text-limit overflowy color-light justify-text-between">
 									电影人物情绪变化指的是电影中人物角色从开始到结束，心理和情感状态的变化过程。
