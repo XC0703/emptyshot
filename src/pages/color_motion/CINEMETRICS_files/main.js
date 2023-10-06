@@ -380,7 +380,8 @@
         .then((e) => e.json())
         .then((e) => {
           const t = i()(e.movies).map((t) => {
-            const n = "https://anlh.xyz/emptyshot/" + e.movies[t];
+            const n =
+              "https://anlh.xyz/emptyshot/color-motion-movies/" + e.movies[t];
             return fetch(n)
               .then((e) => e.json())
               .then((e) => ({ name: t, data: e }));
@@ -821,7 +822,8 @@
             const s = t - v.g > 0 ? t : t + Math.min(v.g - t, v.g);
             (r.style.left = s + "px"), (r.style.display = "block");
           })(
-            ((e, t) => `https://anlh.xyz/emptyshot/${t}/stills/${e}`)(
+            ((e, t) =>
+              `https://anlh.xyz/emptyshot/color-motion-movies/${t}/stills/${e}`)(
               s.stills[f],
               s.title
             ),
